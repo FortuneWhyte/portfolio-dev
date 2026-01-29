@@ -5,7 +5,7 @@ export default function Portfolio() {
         {
             title: "UR-Exam-Planner",
             description: "A web app that helps students schedule and track exams.",
-            image: "c:\Users\WHYTE\Downloads\homepage.jpg",
+            image: "/images/homepage.jpg",
             liveLink: "https://ur-exam-planner.vercel.app/",
             githubLink: "https://github.com/FortuneWhyte/UR-exam-planner-frontend",
         },
