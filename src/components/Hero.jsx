@@ -10,7 +10,11 @@ export default function  Hero() {
                 <a href="#contact" class="cta-button">Let's Connect</a>
             </div>
             <div class="hero-image">
-                <img src="" alt="Profile" class="profile-img">
+                <img
+                    src="c:\Users\WHYTE\Downloads\profilepic.png" 
+                    alt="Profile" 
+                    className="profile-img"
+                />
             </div>       
         </section>
     );
