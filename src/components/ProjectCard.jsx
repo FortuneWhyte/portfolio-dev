@@ -1,4 +1,11 @@
-export default function ProjectCard({ image, title, description, livelink, githubLink }) {
+export default function ProjectCard({ image, title, description, liveLink, githubLink }) {
+    const isLiveAvailable =
+        liveLink && !liveLink.toLowerCase().includes("still");
+    
+    const isGithubAvailable =
+        githubLink && !githubLink.toLowerCase().includes("still");
+
+
     return (
         <div className="project-card">
             <img src={image} alt={title} />
@@ -7,12 +14,31 @@ export default function ProjectCard({ image, title, description, livelink, githu
             <p>{description}</p>
 
             <div className="project-links">
-                <a href={liveLink} target="_blank" rel="noopener noreferrer">
-                    Live
-                </a>
-                <a href={githubLink} target="_blank" rel="noopener noreferrer">
-                    GitHub
-                </a>
+                {isLiveAvailable ? (
+                    <a
+                        href={liveLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn"
+                    >
+                        View Project
+                    </a>
+                ) : (
+                    <button className="btn disabled" disabled>
+                        Coming Soon
+                    </button>
+                )}
+
+                {isGithubAvailable && (
+                    <a
+                        href={githubLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn secondary"
+                    >
+                        GitHub
+                    </a>
+                )}
             </div>
         </div>
     );

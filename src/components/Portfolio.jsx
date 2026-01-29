@@ -14,14 +14,14 @@ export default function Portfolio() {
             description: "Predicts CFL game outcomes using historical data.",
             image: "/projects/cfl-predictor.png",
             liveLink: "still in the works!",
-            githubLink: "still in the works!",
+            githubLink: "https://github.com/FortuneWhyte",
         }
     ];
 
 
     return(
         <section id="portfolio">
-            <h2>Portfolio</h2>
+            <h2>My Works</h2>
 
             <div className="portfolio-grid">
                 {projects.map((project, index) => (
