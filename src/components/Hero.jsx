@@ -11,7 +11,7 @@ export default function  Hero() {
             </div>
             <div class="hero-image">
                 <img
-                    src="c:\Users\WHYTE\Downloads\profilepic.png" 
+                    src="/images/profilepic.png" 
                     alt="Profile" 
                     className="profile-img"
                 />
