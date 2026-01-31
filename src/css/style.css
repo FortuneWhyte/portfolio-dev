@@ -153,3 +153,41 @@ footer {
     justify-content: center;
     gap: 2rem;
 }
+
+.social-links a {
+    color: var(--text);
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--accent);
+    transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 8rem;
+    }
+
+.hero-content {
+    padding-right: 0;
+    margin-bottom: 3rem;
+}
+
+.profile-img {
+    width: 280px;
+    height: 280px;
+}
+
+.nav-links {
+    display: none;
+}
+
+.logo {
+    font-size: 1.5rem;
+    padding-left: 2rem;
+}
+}
