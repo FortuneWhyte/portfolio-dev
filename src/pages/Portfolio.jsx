@@ -1,4 +1,6 @@
-import ProjectCard from "./ProjectCard";
+import Navbar from "../componenets/Navbar";
+import Footer from "../components/Footer";
+import ProjectCard from "../components/ProjectCard";
 
 export default function Portfolio() {
     const projects = [
@@ -20,14 +22,20 @@ export default function Portfolio() {
 
 
     return(
-        <section id="portfolio">
-            <h2>My Works</h2>
+        <>
+            <Navbar />
 
-            <div className="portfolio-grid">
-                {projects.map((project, index) => (
-                    <ProjectCard key={index} {...project} />
-                ))}
-            </div>
-        </section>
+            <section className="portfolio-page">
+                <h2>My Works</h2>
+
+                <div className="portfolio-grid">
+                    {projects.map((project, index) => (
+                        <ProjectCard key={index} {...project} />
+                    ))}
+                </div>
+            </section>
+
+            <Footer />
+        </>
     );
 }
