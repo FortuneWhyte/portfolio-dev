@@ -1,13 +1,16 @@
+import { Link } from "react-router-dom";
+
 export default function Navbar() {
-    return (
-        <nav className="navbar">
-            <a href="#home" class="logo">SoftwareDev</a>
-            <ul className="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    );
+  return (
+    <nav className="navbar">
+      <Link to="/" className="logo">SoftwareDev</Link>
+
+      <ul className="nav-links">
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/about">About</Link></li>
+        <li><Link to="/portfolio">Portfolio</Link></li>
+        <li><Link to="/contact">Contact</Link></li>
+      </ul>
+    </nav>
+  );
 }
