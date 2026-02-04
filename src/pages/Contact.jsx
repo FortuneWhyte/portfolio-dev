@@ -6,10 +6,14 @@ export default function Contact() {
         <>
             <Navbar />
             <section className="contact-page">
+                <div className="contact-container">
                 <h2>Get in touch!</h2>
-                <p>Have an idea or if you're interested in working together? Send me a message!</p>
 
-                <form>
+                <p className="contact-text">
+                    Have an idea or if you're interested in working together? Send me a message!
+                </p>
+
+                <form className="contact-form">
                     <input
                         type="text"
                         placeholder="Name"
@@ -27,8 +31,10 @@ export default function Contact() {
 
                     <button type="submit">Send Message</button>
                 </form>
+                </div>
 
             </section>
+
             <Footer />
 
         </>
