@@ -355,3 +355,71 @@ footer {
     border-radius: 5px;
     padding: 3px;
 }
+
+:root {
+    --cube-size: 200px;
+    --translate-z: 100px;
+}
+
+.stage-cube-cont {
+    width: var(--cube-size);
+    height: var(--cube-size);
+    perspective: 1000px;   /* THIS gives depth */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cubespinner {
+    animation: spincube 12s ease-in-out infinite;
+    transform-style: preserve-3d;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.cubespinner div {
+    position: absolute;
+    width: var(--cube-size);
+    height: var(--cube-size);
+    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 90px;
+    box-shadow: 0 0 20px var(--accent-glow);
+}
+
+@media (max-width: 900px) {
+    .about-page .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .stage-cube-cont {
+        margin-top: 3rem;
+    }
+}
+
+@keyframes spincube {
+    from, to  { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+    16%       { transform: rotateY(-90deg); }
+    33%       { transform: rotateY(-90deg) rotateX(90deg); }
+    50%       { transform: rotateY(-180deg) rotateZ(90deg); }
+    66%       { transform: rotateY(-270deg) rotateX(90deg); }
+    83%       { transform: rotateX(90deg); }
+}
+
+.stage-cube-cont {
+    width: var(--cube-size);
+    height: var(--cube-size);
+    perspective: 1000px;
+}
+
+.face1 { transform: translateZ(var(--translate-z)); }
+.face2 { transform: rotateY(90deg) translateZ(var(--translate-z)); }
+.face3 { transform: rotateY(90deg) rotateX(90deg) translateZ(var(--translate-z)); }
+.face4 { transform: rotateY(180deg) rotateZ(90deg) translateZ(var(--translate-z)); }
+.face5 { transform: rotateY(-90deg) rotateZ(90deg) translateZ(var(--translate-z)); }
+.face6 { transform: rotateX(-90deg) translateZ(var(--translate-z)); }

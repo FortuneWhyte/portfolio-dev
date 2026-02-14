@@ -64,6 +64,48 @@ export default function About() {
                   </li>
                 </ul>
               </div>
+
+              <div>
+                <h2>Frameworks & Technologies</h2>
+                <ul>
+                  <li>
+                    <span>ReactJS: 2 years</span>
+                    <div className="progress-bar react-progress">
+                      <div className="progress" style={{ width: "100%" }}></div>
+                    </div>
+                  </li>
+                  <li>
+                    <span>PostgreSQL: 2 years</span>
+                    <div className="progress-bar postgre-progress">
+                      <div className="progress" style={{ width: "75%" }}></div>
+                    </div>
+                  </li>
+                  <li>
+                    <span>NodeJS: 2 years</span>
+                    <div className="progress-bar node-progress">
+                      <div className="progress" style={{ width: "100%" }}></div>
+                    </div>
+                  </li>
+                  <li>
+                    <span>VueJS: 1 year</span>
+                    <div className="progress-bar vue-progress">
+                      <div className="progress" style={{ width: "50%" }}></div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="stage-cube-cont">
+                <div className="cubespinner">
+                  <div className="face1"><i className="fab fa-amazon"></i></div>
+                  <div className="face2"><i className="fab fa-html5"></i></div>
+                  <div className="face3"><i className="fab fa-css3-alt"></i></div>
+                  <div className="face4"><i className="fab fa-react"></i></div>
+                  <div className="face5"><i className="fab fa-python"></i></div>
+                  <div className="face6"><i className="fab fa-java"></i></div>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
