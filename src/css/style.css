@@ -349,3 +349,9 @@ footer {
 .contact-form button:hover {
   opacity: 0.85;
 }
+
+.progress-bar {
+    width: 100%;
+    border-radius: 5px;
+    padding: 3px;
+}
