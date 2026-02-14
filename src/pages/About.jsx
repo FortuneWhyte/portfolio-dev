@@ -38,6 +38,30 @@ export default function About() {
                       <div className="progress" style={{ width: "100%" }}></div>
                     </div>
                   </li>
+                  <li>
+                    <span>Python: 3 years</span>
+                    <div className="progress-bar python-progress">
+                      <div className="progress" style={{ width: "75%" }}></div>
+                    </div>
+                  </li>
+                  <li>
+                    <span>HTML/CSS/JS: 3 years</span>
+                    <div className="progress-bar web-progress">
+                      <div className="progress" style={{ width: "75%" }}></div>
+                    </div>
+                  </li>
+                  <li>
+                    <span>SQL: 1 year</span>
+                    <div className="progress-bar sql-progress">
+                      <div className="progress" style={{ width: "37.5%" }}></div>
+                    </div>
+                  </li>
+                  <li>
+                    <span>Assembly: 1 year</span>
+                    <div className="progress-bar assembly-progress">
+                      <div className="progress" style={{ width: "25%" }}></div>
+                    </div>
+                  </li>
                 </ul>
               </div>
             </div>
