@@ -14,7 +14,7 @@ export default function Portfolio() {
         {
             title: "CFL Match Predictor",
             description: "Predicts CFL game outcomes using historical data.",
-            image: "/projects/cfl-predictor.png",
+            image: "/images/cfl-logo.png.jpeg",
             liveLink: "still in the works!",
             githubLink: "https://github.com/FortuneWhyte",
         }
