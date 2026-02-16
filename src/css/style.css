@@ -196,7 +196,7 @@ footer {
 .about-page,
 .contact-page,
 .portfolio-page {
-    padding: 8rem 5% 4rem;
+    padding: 8rem 8% 4rem;
     min-height: 100vh;
 }
 
@@ -474,7 +474,7 @@ footer {
 }
 
 .progress-bar {
-    height: 10px;
+    height: 18px;
     background-color: rgba(255,255,255,0.1);
     overflow: hidden;
 }
