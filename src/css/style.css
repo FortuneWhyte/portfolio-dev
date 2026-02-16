@@ -36,7 +36,6 @@ body{
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-
 .logo {
     font-size: 1.8rem;
     font-weight: 700;
@@ -52,12 +51,13 @@ body{
     list-style: none;
 }
 
+/* Desktop link styles remain unchanged */
 .nav-links a {
     color: var(--text);
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s ease;
-    position:relative;
+    position: relative;
 }
 
 .nav-links a::after {
@@ -74,6 +74,35 @@ body{
 .nav-links a:hover::after {
     width: 100%;
 }
+
+
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1rem;
+        background: rgba(10, 10, 10, 0.95);
+        padding: 1rem 5%;
+        border-radius: 8px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        z-index: 999;
+
+        max-height: 0;           
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.35s ease, opacity 0.35s ease;
+    }
+
+    .nav-links.open {
+        max-height: 500px;       /* enough to fit all links */
+        opacity: 1;
+    }
+}
+
+
 
 /*Hero section*/
 .hero {
@@ -139,6 +168,14 @@ body{
     position: relative;
     overflow: hidden;
 }
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem; 
+}
+
 
 /*Footer section*/
 footer {
@@ -485,4 +522,44 @@ footer {
     background: var(--accent); 
     border-radius: 5px;
     transition: width 0.6s ease-in-out;
+}
+
+/* Hamburger button */
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: var(--text);
+    cursor: pointer;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;          /* hidden by default */
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1rem;
+        background: rgba(10,10,10,0.95);
+        padding: 1rem 5%;
+        border-radius: 8px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        z-index: 999;
+    }
+
+    .nav-links.open {
+        display: flex;          /* shown when hamburger clicked */
+    }
+
+    .nav-links a {
+        font-size: 1.2rem;
+    }
 }
