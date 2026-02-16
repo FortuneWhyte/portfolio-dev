@@ -198,6 +198,7 @@ footer {
 .portfolio-page {
     padding: 8rem 8% 4rem;
     min-height: 100vh;
+    margin-top: 60px;
 }
 
 .project-card {
