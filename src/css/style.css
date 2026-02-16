@@ -423,3 +423,65 @@ footer {
 .face4 { transform: rotateY(180deg) rotateZ(90deg) translateZ(var(--translate-z)); }
 .face5 { transform: rotateY(-90deg) rotateZ(90deg) translateZ(var(--translate-z)); }
 .face6 { transform: rotateX(-90deg) translateZ(var(--translate-z)); }
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5rem;
+}
+
+/* Left side */
+.text-zone {
+    flex: 1;
+    max-width: 650px;
+}
+
+/* Right side (cube bigger now) */
+.stage-cube-cont {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+:root {
+    --cube-size: 300px;
+    --translate-z: 150px;
+}
+
+@media (max-width: 1000px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .stage-cube-cont {
+        margin-top: 4rem;
+    }
+}
+
+
+
+.skill {
+    margin-bottom: 1.4rem;
+}
+
+.skill span {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-size: 0.95rem;
+}
+
+.progress-bar {
+    height: 10px;
+    background-color: rgba(255,255,255,0.1);
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background: var(--accent); 
+    border-radius: 5px;
+    transition: width 0.6s ease-in-out;
+}
