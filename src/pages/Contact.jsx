@@ -1,7 +1,18 @@
+import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 export default function Contact() {
+
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    
+    navigate("/thankyou");
+  };
+    
   return (
     <>
       <Navbar />

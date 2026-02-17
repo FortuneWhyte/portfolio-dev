@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -14,9 +15,9 @@ export default function ThankYou() {
             Your message has been sent!
           </p>
 
-          <a href="/contact" className="cta-button">
-            Send Another Message
-          </a>
+          <Link to="/" className="cta-button">
+            Back to Home
+          </Link>
         </div>
       </section>
       <Footer />
