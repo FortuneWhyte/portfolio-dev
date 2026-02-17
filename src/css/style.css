@@ -556,10 +556,28 @@ footer {
     }
 
     .nav-links.open {
-        display: flex;          /* shown when hamburger clicked */
+        display: flex;          
     }
 
     .nav-links a {
         font-size: 1.2rem;
     }
+}
+
+.contact-form .cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: linear-gradient(45deg, var(--accent), #27ae60);
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.contact-form .cta-button:hover,
+.contact-form .cta-button:active {
+    background: #27ae60; /* solid green when pressed or hovered */
+    box-shadow: 0 4px 10px var(--accent-glow);
 }

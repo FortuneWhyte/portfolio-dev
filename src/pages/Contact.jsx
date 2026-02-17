@@ -2,41 +2,53 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 export default function Contact() {
-    return (
-        <>
-            <Navbar />
-            <section className="contact-page">
-                <div className="contact-container">
-                <h2>Get in touch!</h2>
+  return (
+    <>
+      <Navbar />
+      <section className="contact-page">
+        <div className="contact-container">
+          <h2>Get in touch!</h2>
 
-                <p className="contact-text">
-                    Have an idea or if you're interested in working together? Send me a message!
-                </p>
+          <p className="contact-text">
+            Have an idea or if you're interested in working together? Send me a message!
+          </p>
 
-                <form className="contact-form">
-                    <input
-                        type="text"
-                        placeholder="Name"
-                        required
-                    />
-                    <input
-                        type="email"
-                        placeholder="Email"
-                        required
-                    />
-                    <textarea
-                        placeholder="Message"
-                        rows="5"
-                    required/>
+          <form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            className="contact-form"
+          >
+            
+            <input type="hidden" name="form-name" value="contact" />
 
-                    <button type="submit">Send Message</button>
-                </form>
-                </div>
+            <input
+              type="text"
+              name="name"
+              placeholder="Name"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              required
+            />
+            <textarea
+              name="message"
+              placeholder="Message"
+              rows="5"
+              required
+            />
 
-            </section>
+            <button type="submit" className="cta-button">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </section>
 
-            <Footer />
-
-        </>
-    );
+      <Footer />
+    </>
+  );
 }
