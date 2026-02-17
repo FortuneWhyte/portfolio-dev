@@ -17,6 +17,7 @@ export default function Contact() {
             name="contact"
             method="POST"
             data-netlify="true"
+            action="/thank-you"
             className="contact-form"
           >
             
