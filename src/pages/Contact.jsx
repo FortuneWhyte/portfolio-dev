@@ -1,17 +1,21 @@
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 export default function Contact() {
-
   const navigate = useNavigate();
+  const [message, setMessage] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-     navigate("/thank-you");
-  };
     
+    if (message.trim() !== "") {
+      navigate("/thank-you");
+    }
+  };
+
   return (
     <>
       <Navbar />
@@ -20,35 +24,28 @@ export default function Contact() {
           <h2>Get in touch!</h2>
 
           <p className="contact-text">
-            Have an idea or if you're interested in working together? Send me a message!
+            Have an idea or interested in working together? Send me a message!
           </p>
 
-          <form
-            name="contact"
-            method="POST"
-            data-netlify="true"
-            onSubmit={handleSubmit}
-            className="contact-form"
-          >
-            
-            <input type="hidden" name="form-name" value="contact" />
-
+          <form className="contact-form" onSubmit={handleSubmit}>
             <input
               type="text"
               name="name"
               placeholder="Name"
-              required
             />
+
             <input
               type="email"
               name="email"
               placeholder="Email"
-              required
             />
+
             <textarea
               name="message"
               placeholder="Message"
               rows="5"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
               required
             />
 
@@ -58,7 +55,6 @@ export default function Contact() {
           </form>
         </div>
       </section>
-
       <Footer />
     </>
   );
