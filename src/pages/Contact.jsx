@@ -9,8 +9,7 @@ export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    
-    navigate("/thankyou");
+     navigate("/thank-you");
   };
     
   return (
@@ -28,7 +27,7 @@ export default function Contact() {
             name="contact"
             method="POST"
             data-netlify="true"
-            action="/thank-you"
+            onSubmit={handleSubmit}
             className="contact-form"
           >
             
