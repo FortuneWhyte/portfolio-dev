@@ -17,7 +17,15 @@ export default function Portfolio() {
             image: "/images/cfl-logo.png.jpeg",
             liveLink: "still in the works!",
             githubLink: "https://github.com/FortuneWhyte",
+        },
+        {
+            title: "Luxestylebraids",
+            description: "Hairstyling brand.",
+            image: "/images/cfl-logo.png.jpeg",
+            liveLink: "still in the works!",
+            githubLink: "https://github.com/FortuneWhyte",
         }
+
     ];
 
 
