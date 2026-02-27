@@ -52,7 +52,7 @@ export default function About() {
               </div>
 
               <div className="skill">
-                <span>Assembly — 1 year</span>
+                <span>Typescript — 1 year</span>
                 <div className="progress-bar">
                   <div className="progress" style={{ width: "25%" }}></div>
                 </div>
