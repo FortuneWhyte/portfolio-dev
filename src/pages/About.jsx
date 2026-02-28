@@ -14,9 +14,10 @@ export default function About() {
             <h1>About Me</h1>
 
             <p>
-              I am a driven software developer with a diverse background that has
-              shaped my ability to collaborate effectively, communicate clearly,
-              and approach technical challenges with strong analytical thinking.
+              I am a motivated software developer with an Associate Degree in Computer Science 
+              from the University of Regina. My diverse background has strengthened my ability 
+              to collaborate effectively, communicate clearly, and approach technical challenges 
+              with strong analytical and problem-solving skills.
             </p>
 
             
