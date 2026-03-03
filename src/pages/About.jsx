@@ -41,7 +41,7 @@ export default function About() {
               <div className="skill">
                 <span>HTML / CSS / JS — 3 years</span>
                 <div className="progress-bar">
-                  <div className="progress" style={{ width: "100%" }}></div>
+                  <div className="progress" style={{ width: "75%" }}></div>
                 </div>
               </div>
 
