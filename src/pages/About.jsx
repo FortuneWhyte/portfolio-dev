@@ -17,7 +17,7 @@ export default function About() {
               I am a motivated software developer with an Associate Degree in Computer Science 
               from the University of Regina. My diverse background has strengthened my ability 
               to collaborate effectively, communicate clearly, and approach technical challenges 
-              with strong analytical and problem-solving skills. I am a problem solver.
+              with strong analytical and problem-solving skills. 
             </p>
 
             
