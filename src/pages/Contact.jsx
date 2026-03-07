@@ -14,19 +14,45 @@ export default function Contact() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const [isError, setIsError] = useState(false);
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (formData.message.trim() !== "") {
       setIsSubmitting(true);
-      // Simulate API call for now
-      setTimeout(() => {
+      setIsError(false);
+
+      try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            access_key: "YOUR_WEB3FORMS_ACCESS_KEY_HERE",
+            ...formData
+          }),
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          setIsSubmitting(false);
+          setFormData({ name: "", email: "", message: "" });
+          navigate("/thank-you");
+        } else {
+          setIsSubmitting(false);
+          setIsError(true);
+        }
+      } catch (error) {
         setIsSubmitting(false);
-        navigate("/thank-you");
-      }, 800);
+        setIsError(true);
+      }
     }
   };
 
@@ -96,6 +122,11 @@ export default function Contact() {
             >
               {isSubmitting ? "Sending..." : "Send Message"}
             </motion.button>
+            {isError && (
+              <p style={{ color: "#ef4444", marginTop: "1rem", textAlign: "center", fontSize: "0.95rem" }}>
+                Oops! Something went wrong. Please check your Web3Forms access key.
+              </p>
+            )}
           </form>
         </motion.div>
       </section>
