@@ -2,60 +2,90 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { motion } from "framer-motion";
+import "../css/Contact.css";
 
 export default function Contact() {
   const navigate = useNavigate();
   const [message, setMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    
     if (message.trim() !== "") {
-      navigate("/thank-you");
+      setIsSubmitting(true);
+      // Simulate API call
+      setTimeout(() => {
+        setIsSubmitting(false);
+        navigate("/thank-you");
+      }, 800);
     }
   };
 
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, transition: { duration: 0.5 } }}
+    >
       <Navbar />
       <section className="contact-page">
-        <div className="contact-container">
-          <h2>Get in touch!</h2>
-
-          <p className="contact-text">
-            Have an idea or interested in working together? Send me a message!
-          </p>
+        <motion.div
+          className="contact-container"
+          initial={{ scale: 0.95, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+        >
+          <div className="contact-header">
+            <h2>Let's build something great.</h2>
+            <p className="contact-text">
+              Have an idea or interested in working together? I'm currently open for new opportunities.
+            </p>
+          </div>
 
           <form className="contact-form" onSubmit={handleSubmit}>
-            <input
-              type="text"
-              name="name"
-              placeholder="Name"
-            />
+            <div className="form-group">
+              <label>Name</label>
+              <input
+                type="text"
+                name="name"
+                placeholder="John Doe"
+              />
+            </div>
 
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-            />
+            <div className="form-group">
+              <label>Email</label>
+              <input
+                type="email"
+                name="email"
+                placeholder="john@example.com"
+              />
+            </div>
 
-            <textarea
-              name="message"
-              placeholder="Message"
-              rows="5"
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              required
-            />
+            <div className="form-group">
+              <label>Message</label>
+              <textarea
+                name="message"
+                placeholder="How can I help you?"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                required
+              />
+            </div>
 
-            <button type="submit" className="cta-button">
-              Send Message
-            </button>
+            <motion.button
+              type="submit"
+              className="submit-btn"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? "Sending..." : "Send Message"}
+            </motion.button>
           </form>
-        </div>
+        </motion.div>
       </section>
       <Footer />
-    </>
+    </motion.div>
   );
 }

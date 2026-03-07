@@ -1,24 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;700;800&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
+h1, h2, h3, h4, h5, h6, .logo {
+    font-family: 'Outfit', sans-serif;
+}
 
 :root {
-    --dark-bg: #0a0a0a;
-    --darker-bg: #050505;
-    --accent: #2ecc71;
-    --accent-glow: rgba(46, 204, 113, 0.4);
-    --text: #ffffff;
+    --dark-bg: #030712; /* Deep modern slate/blue-black */
+    --darker-bg: #020617; 
+    --accent: #3b82f6; /* Premium vivid blue accent */
+    --accent-glow: rgba(59, 130, 246, 0.4);
+    --accent-secondary: #6366f1; /* Indigo for gradient */
+    --text: #f8fafc;
+    --text-muted: #94a3b8;
+    --card-bg: rgba(15, 23, 42, 0.6);
+    --border-color: rgba(255, 255, 255, 0.08);
 }
 
-body{
+body {
     background-color: var(--dark-bg);
-    color:  var(--text);
+    color: var(--text);
     line-height: 1.6;
-    overflow-x:hidden;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /*Navbar section*/

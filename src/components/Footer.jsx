@@ -1,30 +1,35 @@
 import { FaGithub, FaLinkedin, FaFacebook } from "react-icons/fa";
+import "../css/Footer.css";
 
 export default function Footer() {
-    return (
+  return (
     <footer>
-      <p>&copy; 2026 Great-Fortune Abiye-Whyte. All rights reserved.</p>
+      <div className="footer-content">
+        <p>&copy; 2026 Great-Fortune Abiye-Whyte. All rights reserved.</p>
 
-      <div className="social-links">
-        <a href="https://github.com/FortuneWhyte" target="_blank" rel="noopener noreferrer">
-          <FaGithub />
-        </a>
+        <div className="social-links">
+          <a href="https://github.com/FortuneWhyte" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+            <FaGithub />
+          </a>
 
-        <a
-          href="https://www.linkedin.com/in/great-fortune-abiye-whyte-8a91a2280/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaLinkedin />
-        </a>
+          <a
+            href="https://www.linkedin.com/in/great-fortune-abiye-whyte-8a91a2280/"
+            aria-label="LinkedIn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaLinkedin />
+          </a>
 
-        <a
-          href="https://www.facebook.com/whyte.fortuneee/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaFacebook />
-        </a>
+          <a
+            href="https://www.facebook.com/whyte.fortuneee/"
+            aria-label="Facebook"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaFacebook />
+          </a>
+        </div>
       </div>
     </footer>
   );

@@ -1,31 +1,58 @@
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import "../css/Hero.css";
 
 export default function Hero() {
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: { staggerChildren: 0.2, delayChildren: 0.3 }
+        }
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 30 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+    };
+
     return (
-        <section id="home" className="hero">
-            <div className="hero-content">
-                <h1>Fortune Whyte</h1>
-                <p>
-                    Hi, I'm Great-Fortune Abiye-Whyte, a software developer with a strong foundation in C++, specializing in modern web development and user-focused applications.
-                    I'm passionate about building digital experiences that blend creativity with technology. Outside of programming, I enjoy playing football and going to the gym.
-                </p>
+        <motion.section
+            id="home"
+            className="hero"
+            initial="hidden"
+            animate="visible"
+            exit={{ opacity: 0, transition: { duration: 0.5 } }}
+        >
+            <motion.div className="hero-content" variants={containerVariants}>
+                <motion.h1 variants={itemVariants}>
+                    Hi, I'm <br />
+                    <span className="highlight">Fortune Whyte</span>
+                </motion.h1>
+                <motion.p variants={itemVariants}>
+                    A software developer with a strong foundation in C++, specializing in building modern, performant, and premium web experiences. I blend technical precision with creative design.
+                </motion.p>
 
-                <div className="hero-buttons">
-                    <Link to="/contact" className="cta-button">Let's Connect</Link>
-                    
+                <motion.div className="hero-buttons" variants={itemVariants}>
+                    <Link to="/portfolio" className="cta-button">View Work</Link>
+                    <Link to="/contact" className="cta-button outline">Let's Connect</Link>
+                </motion.div>
+            </motion.div>
+
+            <motion.div
+                className="hero-image"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+            >
+                <div className="profile-img-container">
+                    <img
+                        src="/images/profilepic.png"
+                        alt="Profile"
+                        className="profile-img"
+                    />
                 </div>
-            </div>
-
-            <div className="hero-image">
-                <img
-                    src="/images/profilepic.png"
-                    alt="Profile"
-                    className="profile-img"
-                />
-            </div>
-        </section>
+            </motion.div>
+        </motion.section>
     );
 }
-
-
-      

@@ -1,0 +1,224 @@
+.about-page {
+    padding: 8rem 5% 4rem;
+    min-height: 100vh;
+    background: radial-gradient(circle at 10% 80%, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.text-zone {
+    flex: 1;
+    max-width: 650px;
+}
+
+.text-zone h1 {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    margin-bottom: 1.5rem;
+    color: var(--text);
+    font-weight: 700;
+}
+
+.text-zone p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+}
+
+.skills-section {
+    margin-bottom: 3rem;
+}
+
+.skills-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text);
+    font-weight: 600;
+}
+
+.skill {
+    margin-bottom: 1.2rem;
+}
+
+.skill span {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    color: var(--text);
+    font-weight: 500;
+}
+
+.progress-bar {
+    height: 10px;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.progress {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 0 10px var(--accent-glow);
+}
+
+/* 3D Cube Styles */
+.stage-cube-cont {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1200px;
+    height: 400px;
+}
+
+.cubespinner {
+    animation: spincube 15s ease-in-out infinite;
+    transform-style: preserve-3d;
+    transform-origin: 150px 150px 0;
+    width: 300px;
+    height: 300px;
+    position: relative;
+}
+
+.cubespinner div {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    background: rgba(15, 23, 42, 0.4);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 120px;
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.1) inset;
+    transition: all 0.3s ease;
+}
+
+.cubespinner div:hover {
+    background: rgba(59, 130, 246, 0.1);
+    box-shadow: 0 0 50px rgba(59, 130, 246, 0.3) inset;
+}
+
+.face1 {
+    transform: translateZ(150px);
+    color: #dd0031;
+}
+
+.face2 {
+    transform: rotateY(90deg) translateZ(150px);
+    color: #f06529;
+}
+
+.face3 {
+    transform: rotateY(90deg) rotateX(90deg) translateZ(150px);
+    color: #28a4d9;
+}
+
+.face4 {
+    transform: rotateY(180deg) rotateZ(90deg) translateZ(150px);
+    color: #5ed4f4;
+}
+
+.face5 {
+    transform: rotateY(-90deg) rotateZ(90deg) translateZ(150px);
+    color: #efd81d;
+}
+
+.face6 {
+    transform: rotateX(-90deg) translateZ(150px);
+    color: #ec4d28;
+}
+
+@keyframes spincube {
+
+    from,
+    to {
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+
+    16% {
+        transform: rotateY(-90deg);
+    }
+
+    33% {
+        transform: rotateY(-90deg) rotateZ(90deg);
+    }
+
+    50% {
+        transform: rotateY(-180deg) rotateZ(90deg);
+    }
+
+    66% {
+        transform: rotateY(-270deg) rotateX(90deg);
+    }
+
+    83% {
+        transform: rotateX(90deg);
+    }
+}
+
+@media (max-width: 1024px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 3rem;
+    }
+
+    .text-zone {
+        margin: 0 auto;
+    }
+
+    .stage-cube-cont {
+        margin-top: 2rem;
+        height: 350px;
+    }
+}
+
+@media (max-width: 600px) {
+    .cubespinner {
+        width: 200px;
+        height: 200px;
+        transform-origin: 100px 100px 0;
+    }
+
+    .cubespinner div {
+        width: 200px;
+        height: 200px;
+        font-size: 80px;
+    }
+
+    .face1 {
+        transform: translateZ(100px);
+    }
+
+    .face2 {
+        transform: rotateY(90deg) translateZ(100px);
+    }
+
+    .face3 {
+        transform: rotateY(90deg) rotateX(90deg) translateZ(100px);
+    }
+
+    .face4 {
+        transform: rotateY(180deg) rotateZ(90deg) translateZ(100px);
+    }
+
+    .face5 {
+        transform: rotateY(-90deg) rotateZ(90deg) translateZ(100px);
+    }
+
+    .face6 {
+        transform: rotateX(-90deg) translateZ(100px);
+    }
+}
