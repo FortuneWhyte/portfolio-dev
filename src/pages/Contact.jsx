@@ -34,7 +34,7 @@ export default function Contact() {
             Accept: "application/json",
           },
           body: JSON.stringify({
-            access_key: "YOUR_WEB3FORMS_ACCESS_KEY_HERE",
+            access_key: "eed7dc77-4c40-4288-8489-d45b092c9cc3",
             ...formData
           }),
         });
