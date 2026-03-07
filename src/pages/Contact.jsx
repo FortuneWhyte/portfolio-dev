@@ -7,14 +7,22 @@ import "../css/Contact.css";
 
 export default function Contact() {
   const navigate = useNavigate();
-  const [message, setMessage] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: ""
+  });
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (message.trim() !== "") {
+    if (formData.message.trim() !== "") {
       setIsSubmitting(true);
-      // Simulate API call
+      // Simulate API call for now
       setTimeout(() => {
         setIsSubmitting(false);
         navigate("/thank-you");
@@ -50,6 +58,9 @@ export default function Contact() {
                 type="text"
                 name="name"
                 placeholder="John Doe"
+                value={formData.name}
+                onChange={handleChange}
+                required
               />
             </div>
 
@@ -59,6 +70,9 @@ export default function Contact() {
                 type="email"
                 name="email"
                 placeholder="john@example.com"
+                value={formData.email}
+                onChange={handleChange}
+                required
               />
             </div>
 
@@ -67,8 +81,8 @@ export default function Contact() {
               <textarea
                 name="message"
                 placeholder="How can I help you?"
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
+                value={formData.message}
+                onChange={handleChange}
                 required
               />
             </div>
