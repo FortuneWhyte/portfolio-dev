@@ -59,6 +59,30 @@ export default function About() {
               I am a motivated software developer with an Associate Degree in Computer Science. My diverse background has strengthened my ability to collaborate effectively, communicate clearly, and approach technical challenges with strong analytical and problem-solving skills. I have a deep passion for building robust backends and stunning interactive frontends.
             </motion.p>
 
+            <div className="work-experience">
+              <motion.h2
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.35 }}
+              >
+                Work Experience
+              </motion.h2>
+
+              <motion.div
+                className="experience-card"
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+              >
+                <h3>Charan Property Management</h3>
+                <span className="role">Software Developer</span>
+                <p className="description">
+                  Supporting the development, deployment, and improvement of internal software systems while contributing to AI integration initiatives designed to streamline administrative workflows and enhance overall operational efficiency.
+                </p>
+              </motion.div>
+            </div>
+
             {skills.map((category, idx) => (
               <div key={idx} className="skills-section">
                 <motion.h2
