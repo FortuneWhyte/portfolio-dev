@@ -1,16 +1,92 @@
-# React + Vite
+# FortuneWhyte — Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, animated personal portfolio built with **React** and **Vite**, showcasing my projects, skills, and work experience.
 
-Currently, two official plugins are available:
+> **Live Site:** *Coming soon*
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Smooth Page Transitions** — Framer Motion `AnimatePresence` for seamless route animations
+- **Interactive 3D Cube** — CSS 3D-transformed cube spinner displaying tech stack icons
+- **Animated Skill Bars** — Progress bars that animate into view as you scroll
+- **Glassmorphism UI** — Dark-themed cards with backdrop blur and accent glow effects
+- **Responsive Design** — Fully adaptive layout across desktop, tablet, and mobile
+- **Contact Form** — Integrated contact page for direct outreach
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+| Category       | Technologies                                |
+|----------------|---------------------------------------------|
+| **Framework**  | React 19, React Router 7                    |
+| **Build Tool** | Vite 7                                      |
+| **Animations** | Framer Motion                               |
+| **Icons**      | React Icons                                 |
+| **Styling**    | Vanilla CSS with CSS Custom Properties      |
+| **Linting**    | ESLint with React Hooks & Refresh plugins   |
+
+## 📄 Pages
+
+| Page          | Route         | Description                                              |
+|---------------|---------------|----------------------------------------------------------|
+| **Home**      | `/`           | Hero section with introduction and call-to-action        |
+| **About**     | `/about`      | Bio, work experience, skills with progress bars, 3D cube |
+| **Portfolio**  | `/portfolio`  | Project showcase grid with live/GitHub links              |
+| **Contact**   | `/contact`    | Contact form for direct communication                    |
+
+## 📂 Project Structure
+
+```
+portfolio-dev/
+├── public/
+│   └── images/            # Project screenshots & assets
+├── src/
+│   ├── assets/            # Static assets
+│   ├── components/        # Reusable components (Navbar, Footer, Hero, ProjectCard)
+│   ├── css/               # Modular stylesheets per component/page
+│   ├── pages/             # Route-level page components
+│   ├── App.jsx            # Root component with animated routing
+│   ├── main.jsx           # Entry point
+│   └── index.css          # Global styles & CSS variables
+├── package.json
+└── vite.config.js
+```
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) v18+
+- npm or yarn
+
+### Installation
+
+```bash
+git clone https://github.com/FortuneWhyte/portfolio-dev.git
+cd portfolio-dev
+npm install
+```
+
+### Development
+
+```bash
+npm run dev
+```
+
+Opens at `http://localhost:5173`
+
+### Production Build
+
+```bash
+npm run build
+npm run preview
+```
+
+## 📬 Contact
+
+Feel free to reach out through the [Contact page](/) or connect on [GitHub](https://github.com/FortuneWhyte).
+
+---
+
+Built with ☕ and React by **FortuneWhyte**
