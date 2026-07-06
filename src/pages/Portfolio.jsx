@@ -24,9 +24,9 @@ export default function Portfolio() {
         },
         {
             title: "Luxestylebraids",
-            description: "Premium hairstyling brand web presence.",
-            image: "/images/luxestyle.jpeg",
-            liveLink: "still in the works!",
+            description: "A live website for a premium braiding and hairstyling brand, showcasing services, gallery, and bookings.",
+            image: "/images/luxestylebraids.jpg",
+            liveLink: "https://luxestylebraids.com",
             githubLink: "https://github.com/FortuneWhyte",
             stack: ["React", "CSS Modules"]
         }
