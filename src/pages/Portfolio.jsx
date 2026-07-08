@@ -15,20 +15,20 @@ export default function Portfolio() {
             stack: ["React", "Express", "Node.js"]
         },
         {
-            title: "CFL Match Predictor",
-            description: "Predicts CFL game outcomes using historical data.",
-            image: "/images/cfl-logo.png.jpeg",
-            liveLink: "still in the works!",
-            githubLink: "https://github.com/FortuneWhyte",
-            stack: ["Python", "Flask", "Pandas"]
-        },
-        {
             title: "Luxestylebraids",
             description: "A live website for a premium braiding and hairstyling brand, showcasing services, gallery, and bookings.",
             image: "/images/luxestylebraids.jpg",
             liveLink: "https://luxestylebraids.com",
             githubLink: "https://github.com/FortuneWhyte",
             stack: ["React", "CSS Modules"]
+        },
+        {
+            title: "EvalLens",
+            description: "A self-hosted dashboard for evaluating LLM and RAG outputs, using LLM-as-judge scoring with cost and latency capture, eval run history, and swappable model providers.",
+            image: "/images/evallens.png",
+            liveLink: "still in the works!",
+            githubLink: "https://github.com/FortuneWhyte",
+            stack: ["Python", "FastAPI", "SQLModel", "OpenAI SDK"]
         }
     ];
 
