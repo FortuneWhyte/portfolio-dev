@@ -20,7 +20,7 @@ export default function Portfolio() {
             image: "/images/luxestylebraids.jpg",
             liveLink: "https://luxestylebraids.com",
             githubLink: "https://github.com/FortuneWhyte",
-            stack: ["React", "CSS Modules"]
+            stack: ["React", "Prisma", "Typescript"]
         },
         {
             title: "EvalLens",
