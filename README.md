@@ -2,7 +2,7 @@
 
 A modern, animated personal portfolio built with **React** and **Vite**, showcasing my projects, skills, and work experience.
 
-> **Live Site:** *Coming soon*
+> **Live Site:** *https://whytedev.netlify.app*
 
 ---
 
