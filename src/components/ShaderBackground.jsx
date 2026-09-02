@@ -47,7 +47,17 @@ export default function ShaderBackground() {
 
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+
+        // No WebGL, a blocked or lost context, or a driver the browser refuses
+        // to use: the background is decoration, so fail quietly to the CSS
+        // gradient underneath rather than taking the page down.
+        let renderer;
+        try {
+            renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        } catch {
+            return;
+        }
+
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
         renderer.setSize(window.innerWidth, window.innerHeight);
         container.appendChild(renderer.domElement);
