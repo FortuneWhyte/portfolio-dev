@@ -13,19 +13,19 @@ export default function About() {
   const skills = [
     {
       title: "Languages", items: [
-        { name: "C++", years: "4 years", percent: "100%" },
-        { name: "Python", years: "3 years", percent: "80%" },
-        { name: "HTML/CSS/JS", years: "3 years", percent: "85%" },
-        { name: "SQL", years: "1 year", percent: "40%" },
-        { name: "TypeScript", years: "1 year", percent: "45%" }
+        { name: "C++", years: "4 years" },
+        { name: "Python", years: "3 years" },
+        { name: "HTML/CSS/JS", years: "3 years" },
+        { name: "SQL", years: "1 year" },
+        { name: "TypeScript", years: "1 year" }
       ]
     },
     {
       title: "Technologies", items: [
-        { name: "ReactJS", years: "2 years", percent: "90%" },
-        { name: "Node.js", years: "2 years", percent: "85%" },
-        { name: "PostgreSQL", years: "2 years", percent: "75%" },
-        { name: "Framer Motion", years: "1 year", percent: "70%" }
+        { name: "ReactJS", years: "2 years" },
+        { name: "Node.js", years: "2 years" },
+        { name: "PostgreSQL", years: "2 years" },
+        { name: "Framer Motion", years: "1 year" }
       ]
     }
   ];
@@ -60,37 +60,24 @@ export default function About() {
             </motion.p>
 
             {skills.map((category, idx) => (
-              <div key={idx} className="skills-section">
-                <motion.h2
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: 0.4 + (idx * 0.1) }}
-                >
-                  {category.title}
-                </motion.h2>
+              <motion.div
+                key={category.title}
+                className="skills-section"
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 + (idx * 0.1) }}
+              >
+                <h2>{category.title}</h2>
 
-                {category.items.map((skill, index) => (
-                  <motion.div
-                    key={index}
-                    className="skill"
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: index * 0.1 }}
-                  >
-                    <span>{skill.name} — {skill.years}</span>
-                    <div className="progress-bar">
-                      <motion.div
-                        className="progress"
-                        initial={{ width: "0%" }}
-                        whileInView={{ width: skill.percent }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1, ease: "easeOut", delay: 0.2 + (index * 0.1) }}
-                      ></motion.div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
+                <ul className="skill-list">
+                  {category.items.map((skill) => (
+                    <li key={skill.name} className="skill">
+                      <span className="skill-name">{skill.name}</span>
+                      <span className="skill-years">{skill.years}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
             ))}
           </div>
 
