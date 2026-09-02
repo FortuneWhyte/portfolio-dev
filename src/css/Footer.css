@@ -58,7 +58,7 @@ footer p {
 }
 
 .social-links a:hover {
-    color: white;
+    color: var(--dark-bg);
     transform: translateY(-5px);
     border-color: var(--accent);
     box-shadow: 0 10px 20px -5px var(--accent-glow);

@@ -16,15 +16,22 @@ h1, h2, h3, h4, h5, h6, .logo {
 }
 
 :root {
-    --dark-bg: #030712;
-    --darker-bg: #020617;
-    --accent: #3b82f6;
-    --accent-glow: rgba(59, 130, 246, 0.4);
-    --accent-secondary: #6366f1;
-    --text: #f8fafc;
-    --text-muted: #94a3b8;
-    --card-bg: rgba(15, 23, 42, 0.6);
-    --border-color: rgba(255, 255, 255, 0.08);
+    --dark-bg: #0c0c0e;
+    --darker-bg: #08080a;
+    --nav-bg: rgba(12, 12, 14, 0.72);
+
+    --accent: #e8734a;
+    --accent-secondary: #c9563a;
+    --accent-glow: rgba(232, 115, 74, 0.35);
+    --accent-line: rgba(232, 115, 74, 0.30);
+    --accent-faint: rgba(232, 115, 74, 0.10);
+    --accent-wash: rgba(232, 115, 74, 0.06);
+
+    --text: #f5f4f2;
+    --text-muted: #a3a09c;
+    --card-bg: rgba(255, 255, 255, 0.035);
+    --border-color: rgba(255, 255, 255, 0.09);
+    --danger: #ef4444;
 }
 
 body {

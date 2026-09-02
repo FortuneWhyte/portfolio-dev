@@ -123,7 +123,7 @@ export default function Contact() {
               {isSubmitting ? "Sending..." : "Send Message"}
             </motion.button>
             {isError && (
-              <p style={{ color: "#ef4444", marginTop: "1rem", textAlign: "center", fontSize: "0.95rem" }}>
+              <p style={{ color: "var(--danger)", marginTop: "1rem", textAlign: "center", fontSize: "0.95rem" }}>
                 Oops! Something went wrong. Please check your Web3Forms access key.
               </p>
             )}

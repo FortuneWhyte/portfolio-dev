@@ -61,7 +61,7 @@ export default function Navbar() {
               top: "100%",
               left: 0,
               width: "100%",
-              background: "rgba(3, 7, 18, 0.95)",
+              background: "var(--darker-bg)",
               backdropFilter: "blur(20px)",
               padding: "2rem",
               display: "flex",
@@ -82,7 +82,7 @@ export default function Navbar() {
                   to={link.path}
                   onClick={() => setIsOpen(false)}
                   style={{
-                    color: location.pathname === link.path ? "#3b82f6" : "#f8fafc",
+                    color: location.pathname === link.path ? "var(--accent)" : "var(--text)",
                     textDecoration: "none",
                     fontSize: "1.2rem",
                     fontWeight: "500"
