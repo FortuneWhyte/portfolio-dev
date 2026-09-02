@@ -7,7 +7,7 @@ export const identity = {
     headingBottom: "DIGITAL REALMS.",
     meta: [
         { label: "IDENTITY:01", value: "FORTUNE WHYTE" },
-        { label: "PROTOCOL:02", value: "SOFTWARE DEVELOPER & CREATIVE FRONTEND ENGINEER" },
+        { label: "PROTOCOL:02", value: "SOFTWARE DEVELOPER & CREATIVE FULLSTACK ENGINEER" },
         { label: "LOCATION:03", value: "REMOTE [CANADA]" }
     ]
 };
