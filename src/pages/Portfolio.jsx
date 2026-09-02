@@ -24,7 +24,7 @@ export default function Portfolio() {
         },
         {
             title: "LuMi Cosmetics",
-            description: "An editorial marketing site for LuMi, a luxury cosmetics brand built for melanin-rich skin. A multi-page React SPA in an \"Obsidian / Fuchsia\" high-fashion dark theme, covering the home, shop, Skin Scan 360 shade-matching, events, and brand story pages. Frontend only for now — the full build is in progress.",
+            description: "An editorial marketing site for LuMi, a luxury cosmetics brand built for melanin-rich skin, featuring Skin Scan 360 for AI shade-matching.",
             image: "/images/lumicosmetics.jpg",
             liveLink: "still in the works!",
             githubLink: "https://github.com/FortuneWhyte/LuMicosmetics",
