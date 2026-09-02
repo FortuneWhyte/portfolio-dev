@@ -20,14 +20,16 @@ export default function Home() {
         if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
         const ctx = gsap.context(() => {
-            gsap.from(".hero h1, .hero .meta-block", {
-                y: 40,
-                opacity: 0,
-                duration: 0.9,
-                stagger: 0.08,
-                ease: "power3.out"
-            });
+            gsap.fromTo(".hero h1, .hero .meta-block",
+                { y: 40, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.9, stagger: 0.08, ease: "power3.out" }
+            );
 
+            // fromTo, not from: under StrictMode the effect mounts, reverts and
+            // remounts, and a `from` tween reads whatever opacity the element
+            // happens to hold at that moment as its destination -- freezing the
+            // stagger partway. An explicit end state can't be captured that way.
+            //
             // Reveal each section's own elements as it arrives, rather than
             // one timeline for the whole page.
             gsap.utils.toArray("section:not(.hero)").forEach((section) => {
@@ -36,14 +38,18 @@ export default function Home() {
                 );
                 if (!targets.length) return;
 
-                gsap.from(targets, {
-                    y: 40,
-                    opacity: 0,
-                    duration: 0.8,
-                    stagger: 0.08,
-                    ease: "power3.out",
-                    scrollTrigger: { trigger: section, start: "top 80%", once: true }
-                });
+                gsap.fromTo(targets,
+                    { y: 40, opacity: 0 },
+                    {
+                        y: 0,
+                        opacity: 1,
+                        duration: 0.8,
+                        stagger: 0.08,
+                        ease: "power3.out",
+                        overwrite: "auto",
+                        scrollTrigger: { trigger: section, start: "top 80%", once: true }
+                    }
+                );
             });
         });
 
