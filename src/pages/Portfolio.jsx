@@ -23,6 +23,14 @@ export default function Portfolio() {
             stack: ["React", "Prisma", "Typescript"]
         },
         {
+            title: "LuMi Cosmetics",
+            description: "An editorial marketing site for LuMi, a luxury cosmetics brand built for melanin-rich skin. A multi-page React SPA in an \"Obsidian / Fuchsia\" high-fashion dark theme, covering the home, shop, Skin Scan 360 shade-matching, events, and brand story pages. Frontend only for now — the full build is in progress.",
+            image: "/images/lumicosmetics.jpg",
+            liveLink: "still in the works!",
+            githubLink: "https://github.com/FortuneWhyte/LuMicosmetics",
+            stack: ["React", "TypeScript", "Vite", "Tailwind CSS"]
+        },
+        {
             title: "EvalLens",
             description: "A self-hosted dashboard for evaluating LLM and RAG outputs, using LLM-as-judge scoring with cost and latency capture, eval run history, and swappable model providers.",
             image: "/images/evallens.png",
