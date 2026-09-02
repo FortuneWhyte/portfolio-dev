@@ -7,14 +7,6 @@ import "../css/Portfolio.css";
 export default function Portfolio() {
     const projects = [
         {
-            title: "UR-Exam-Planner",
-            description: "A web app that helps students schedule and track exams.",
-            image: "/images/homepage.jpg",
-            liveLink: "https://ur-exam-planner.vercel.app/",
-            githubLink: "https://github.com/FortuneWhyte/UR-exam-planner-frontend",
-            stack: ["React", "Express", "Node.js"]
-        },
-        {
             title: "Luxestylebraids",
             description: "A live website for a premium braiding and hairstyling brand, showcasing services, gallery, and bookings.",
             image: "/images/luxestylebraids.jpg",
@@ -29,6 +21,14 @@ export default function Portfolio() {
             liveLink: "still in the works!",
             githubLink: "https://github.com/FortuneWhyte/LuMicosmetics",
             stack: ["React", "TypeScript", "Vite", "Tailwind CSS"]
+        },
+        {
+            title: "UR-Exam-Planner",
+            description: "A web app that helps students schedule and track exams.",
+            image: "/images/homepage.jpg",
+            liveLink: "https://ur-exam-planner.vercel.app/",
+            githubLink: "https://github.com/FortuneWhyte/UR-exam-planner-frontend",
+            stack: ["React", "Express", "Node.js"]
         },
         {
             title: "EvalLens",
