@@ -47,7 +47,17 @@ export default function Home() {
             });
         });
 
-        return () => ctx.revert();
+        // Trigger positions are measured on creation, before lazy images and
+        // the webfont have settled. Without a refresh afterwards a section can
+        // sit past its own start point and never reveal, leaving it blank.
+        const refresh = () => ScrollTrigger.refresh();
+        window.addEventListener("load", refresh);
+        document.fonts?.ready.then(refresh);
+
+        return () => {
+            window.removeEventListener("load", refresh);
+            ctx.revert();
+        };
     }, []);
 
     return (
