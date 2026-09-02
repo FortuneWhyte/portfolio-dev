@@ -247,6 +247,20 @@ section {
     transform: scale(1.05);
 }
 
+/* The design carried only a title and tags over the photo. A paragraph needs
+   more separation than the image filter alone gives it, so the lower half of
+   the card gets a scrim -- it sits under .project-info (z-index 2) and over
+   the image, and deepens on hover as the filter brightens the photo. */
+.project-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(5, 7, 10, 0.95) 0%, rgba(5, 7, 10, 0.75) 32%, transparent 62%);
+    z-index: 1;
+    pointer-events: none;
+    transition: opacity 0.8s ease;
+}
+
 .project-info {
     position: absolute;
     bottom: 40px;
@@ -259,8 +273,16 @@ section {
     font-size: 28px;
     font-weight: 900;
     letter-spacing: 0.1em;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
     text-transform: uppercase;
+}
+
+.project-description {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #bdc3c7;
+    margin-bottom: 16px;
+    max-width: 480px;
 }
 
 .project-tags {
@@ -578,6 +600,13 @@ section {
     .hero-meta { grid-template-columns: 1fr; gap: 32px; }
     .projects-grid { grid-template-columns: 1fr; }
     .project-card:nth-child(even) { margin-top: 0; }
+
+    /* One column leaves the card far narrower while the copy stays the same
+       length, so the overlay needs the room back. */
+    .project-card { aspect-ratio: 3/4; }
+    .project-info { bottom: 24px; left: 24px; right: 24px; }
+    .project-info h2 { font-size: 24px; }
+    .project-description { font-size: 13px; margin-bottom: 14px; }
     .stack-item { grid-template-columns: 1fr 1fr; }
     .stack-index { display: none; }
     .experience-row { grid-template-columns: 1fr; gap: 40px; }

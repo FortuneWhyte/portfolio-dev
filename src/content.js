@@ -26,6 +26,7 @@ export const work = {
     projects: [
         {
             title: "LUXESTYLEBRAIDS",
+            description: "A live website for a premium braiding and hairstyling brand, showcasing services, gallery, and bookings.",
             image: "/images/luxestylebraids.jpg",
             tags: ["React", "Prisma", "TypeScript"],
             liveLink: "https://luxestylebraids.com",
@@ -33,6 +34,7 @@ export const work = {
         },
         {
             title: "LUMI_COSMETICS",
+            description: "An editorial marketing site for LuMi, a luxury cosmetics brand built for melanin-rich skin, featuring Skin Scan 360 for AI shade-matching.",
             image: "/images/lumicosmetics.jpg",
             tags: ["React", "TypeScript", "Vite", "Tailwind"],
             liveLink: null,
@@ -40,6 +42,7 @@ export const work = {
         },
         {
             title: "UR_EXAM_PLANNER",
+            description: "A web app that helps students schedule and track exams.",
             image: "/images/homepage.jpg",
             tags: ["React", "Express", "Node.js"],
             liveLink: "https://ur-exam-planner.vercel.app/",
@@ -47,6 +50,7 @@ export const work = {
         },
         {
             title: "EVALLENS",
+            description: "A self-hosted dashboard for evaluating LLM and RAG outputs, using LLM-as-judge scoring with cost and latency capture, eval run history, and swappable model providers.",
             image: "/images/evallens.png",
             tags: ["Python", "FastAPI", "SQLModel", "OpenAI SDK"],
             liveLink: null,
