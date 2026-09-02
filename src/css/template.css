@@ -92,6 +92,19 @@ nav {
     text-decoration: none;
 }
 
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-shadow: 0 0 8px var(--accent);
+    padding: 4px;
+}
+
 .nav-links {
     display: flex;
     gap: 40px;
@@ -144,7 +157,8 @@ section {
 }
 
 .hero {
-    height: 100vh;
+    min-height: 100vh;
+    min-height: 100svh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -152,7 +166,7 @@ section {
 }
 
 .hero h1 {
-    font-size: clamp(60px, 12vw, 160px);
+    font-size: clamp(32px, 11vw, 160px);
     font-weight: 200;
     letter-spacing: -0.02em;
     text-transform: uppercase;
@@ -427,6 +441,7 @@ section {
 
 .contact-footer {
     min-height: 100vh;
+    min-height: 100svh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -573,6 +588,7 @@ section {
 /* Standalone /thank-you route, kept from the previous site. */
 .thankyou-page {
     min-height: 100vh;
+    min-height: 100svh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -600,8 +616,56 @@ section {
 
 @media (max-width: 768px) {
     .container { padding: 0 24px; }
-    nav { padding: 24px; gap: 16px; }
-    .nav-links { gap: 20px; }
+    nav { padding: 20px 24px; }
+
+    /* Logo + five links measure ~512px against 327px usable at 375px, so the
+       links move into a drawer. */
+    .nav-toggle { display: block; }
+
+    .nav-links {
+        display: none;
+        position: fixed;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        padding: 8px 24px 24px;
+        background: rgba(5, 7, 10, 0.97);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    .nav-links.open { display: flex; }
+
+    .nav-links a {
+        opacity: 1;
+        padding: 16px 0;
+        font-size: 12px;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .nav-links a:last-child { border-bottom: none; }
+
+    /* Label, button and stack rows each overrun 327px at their desktop sizes. */
+    .section-label { font-size: 9px; letter-spacing: 0.25em; gap: 8px; }
+    .section-label::before { width: 24px; }
+    .big-button { font-size: 12px; letter-spacing: 0.2em; padding: 18px 28px; }
+    .stack-name { font-size: 18px; }
+    .stack-details { font-size: 10px; }
+    .contact-form { max-width: 100%; }
+}
+
+/* Logo + toggle still measure ~319px against 272px usable on a 320px phone. */
+@media (max-width: 380px) {
+    nav { padding: 18px 16px; }
+    .logo { font-size: 9px; letter-spacing: 0.18em; }
+    .nav-toggle { font-size: 10px; letter-spacing: 0.12em; }
+    .container { padding: 0 16px; }
+    .project-info { bottom: 20px; left: 20px; right: 20px; }
     .hero-meta { grid-template-columns: 1fr; gap: 32px; }
     .projects-grid { grid-template-columns: 1fr; }
     .project-card:nth-child(even) { margin-top: 0; }
@@ -618,4 +682,19 @@ section {
     .exp-year { font-size: 50px; }
     .marquee-content span { font-size: 44px; padding: 0 30px; }
     section { padding: 100px 0; }
+}
+
+/* A phone in landscape is ~812x375: too wide for the mobile breakpoint above,
+   too short for a 100vh hero with 160px section padding. */
+@media (max-height: 500px) and (orientation: landscape) {
+    nav { padding: 16px 32px; }
+    .hero { min-height: auto; padding-top: 96px; padding-bottom: 48px; }
+    .hero h1 { font-size: clamp(32px, 7vw, 64px); margin-bottom: 32px; }
+    .hero-meta { padding-top: 20px; }
+    section { padding: 80px 0; }
+    .marquee { margin: 48px 0; padding: 32px 0; }
+    .marquee-content span { font-size: 40px; }
+    .contact-footer { min-height: auto; padding: 96px 0; }
+    .thankyou-page { min-height: auto; padding: 96px 24px; }
+    .timeline { gap: 48px; }
 }
