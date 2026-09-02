@@ -1,26 +1,23 @@
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
-
+import { useEffect } from "react";
+import Cursor from "../components/Cursor";
+import ShaderBackground from "../components/ShaderBackground";
 
 export default function ThankYou() {
-  return (
-    <>
-      <Navbar />
-      <section className="contact-page">
-        <div className="contact-container">
-          <h2>Thank You!</h2>
-          
-          <p className="contact-text">
-            Your message has been sent!
-          </p>
+    useEffect(() => {
+        document.title = "TRANSMISSION RECEIVED // FORTUNE WHYTE";
+    }, []);
 
-          <Link to="/" className="cta-button">
-            Back to Home
-          </Link>
-        </div>
-      </section>
-      <Footer />
-    </>
-  );
+    return (
+        <>
+            <Cursor />
+            <ShaderBackground />
+            <section className="thankyou-page">
+                <div className="section-label">TRANSMISSION_RECEIVED</div>
+                <h1>Message<br />Sent.</h1>
+                <p>I&apos;ll be in touch shortly.</p>
+                <Link to="/" className="big-button">RETURN TO BASE ↗</Link>
+            </section>
+        </>
+    );
 }
