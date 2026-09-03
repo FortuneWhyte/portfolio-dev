@@ -3,8 +3,8 @@
 
 export const identity = {
     logo: "FORTUNE WHYTE // SYST_01",
-    headingTop: "ARCHITECTING",
-    headingBottom: "DIGITAL REALMS.",
+    headingTop: "FULLSTACK",
+    headingBottom: "FROM DB TO PIXEL.",
     meta: [
         { label: "IDENTITY:01", value: "FORTUNE WHYTE" },
         { label: "PROTOCOL:02", value: "SOFTWARE DEVELOPER & CREATIVE FULLSTACK ENGINEER" },
