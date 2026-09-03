@@ -294,6 +294,7 @@ section {
     letter-spacing: 0.1em;
     margin-bottom: 12px;
     text-transform: uppercase;
+    overflow-wrap: break-word;
 }
 
 .project-description {
@@ -668,17 +669,24 @@ section {
     .logo { font-size: 9px; letter-spacing: 0.18em; }
     .nav-toggle { font-size: 10px; letter-spacing: 0.12em; }
     .container { padding: 0 16px; }
-    .project-info { bottom: 20px; left: 20px; right: 20px; }
+    .project-info { bottom: 24px; left: 20px; right: 20px; }
+    /* UR_EXAM_PLANNER and LUXESTYLEBRAIDS are 15 unbreakable characters. */
+    .project-info h2 { font-size: 22px; }
     .hero-meta { grid-template-columns: 1fr; gap: 32px; }
     .projects-grid { grid-template-columns: 1fr; }
     .project-card:nth-child(even) { margin-top: 0; }
 
     /* One column leaves the card far narrower while the copy stays the same
        length, so the overlay needs the room back. */
-    .project-card { aspect-ratio: 3/4; }
-    .project-info { bottom: 24px; left: 24px; right: 24px; }
-    .project-info h2 { font-size: 24px; }
-    .project-description { font-size: 13px; margin-bottom: 14px; }
+    /* Projects get more room than the shared container allows: the narrower
+       side padding widens the card, and 15/22 is taller than the 3/4 it
+       replaces, so the whole card reads larger without changing the grid. */
+    #work { padding: 0 14px; }
+    .projects-grid { gap: 32px; }
+    .project-card { aspect-ratio: 15/22; }
+    .project-info { bottom: 28px; left: 24px; right: 24px; }
+    .project-info h2 { font-size: 26px; }
+    .project-description { font-size: 14px; line-height: 1.65; margin-bottom: 14px; }
     .stack-item { grid-template-columns: 1fr 1fr; }
     .stack-index { display: none; }
     .experience-row { grid-template-columns: 1fr; gap: 40px; }
