@@ -12,7 +12,7 @@ export const identity = {
     ]
 };
 
-export const marqueeWord = "Discovery Log";
+export const marqueeWord = "Build · Ship · Iterate";
 
 // Resolves the template's <a href="#about"> nav link, which pointed at a
 // section the design never included.

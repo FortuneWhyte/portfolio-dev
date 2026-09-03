@@ -567,7 +567,10 @@ section {
 
 .marquee-content {
     display: inline-block;
-    animation: marquee 30s linear infinite;
+    /* Duration tracks the phrase length: the keyframe covers half the content
+       regardless of how wide that is, so a longer phrase scrolls faster at a
+       fixed duration. 48s holds the pace the 30s/"Discovery Log" pairing had. */
+    animation: marquee 48s linear infinite;
 }
 
 .marquee-content span {
