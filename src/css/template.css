@@ -628,7 +628,11 @@ section {
 
     .nav-links {
         display: none;
-        position: fixed;
+        /* absolute, not fixed: percentages on a fixed element resolve against
+           the viewport, so top: 100% put the panel a full screen height down
+           and entirely out of view. nav is itself fixed, so an absolute child
+           anchors directly beneath it with no magic number. */
+        position: absolute;
         top: 100%;
         left: 0;
         right: 0;
