@@ -21,25 +21,35 @@ export default function Nav() {
         };
     }, [isOpen]);
 
+    const close = () => setIsOpen(false);
+
     return (
         <nav>
-            <a href="#top" className="logo" onClick={() => setIsOpen(false)}>
+            <a href="#top" className="logo" onClick={close}>
                 {identity.logo}
             </a>
 
             <button
-                className="nav-toggle"
+                className={`nav-toggle${isOpen ? " open" : ""}`}
                 onClick={() => setIsOpen((v) => !v)}
                 aria-expanded={isOpen}
                 aria-controls="nav-links"
                 aria-label={isOpen ? "Close menu" : "Open menu"}
             >
-                {isOpen ? "[ CLOSE ]" : "[ MENU ]"}
+                <span /><span /><span />
             </button>
+
+            {/* Sits behind the panel and in front of the page, so a tap anywhere
+                outside the menu closes it. */}
+            <div
+                className={`nav-backdrop${isOpen ? " open" : ""}`}
+                onClick={close}
+                aria-hidden="true"
+            />
 
             <div id="nav-links" className={`nav-links${isOpen ? " open" : ""}`}>
                 {navLinks.map((link) => (
-                    <a key={link.href} href={link.href} onClick={() => setIsOpen(false)}>
+                    <a key={link.href} href={link.href} onClick={close}>
                         {link.name}
                     </a>
                 ))}
