@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Inter:wght@200;400;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
 
 :root {
     --bg: #05070a;
@@ -9,6 +9,9 @@
     --border: rgba(0, 212, 255, 0.15);
     --font-main: 'Inter', sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
+    /* Squared-off and slightly mechanical -- carries the console framing the
+       section labels set up, where Inter 900 just reads as a heavy sans. */
+    --font-display: 'Chakra Petch', 'Inter', sans-serif;
 }
 
 * {
@@ -314,20 +317,15 @@ section {
 }
 
 .project-info h2 {
-    font-size: 28px;
-    font-weight: 900;
-    letter-spacing: 0.1em;
+    font-family: var(--font-display);
+    font-size: 30px;
+    /* Chakra Petch tops out at 700, and its 700 already sets heavier than
+       Inter's 900 at this size. */
+    font-weight: 700;
+    letter-spacing: 0.08em;
     margin-bottom: 12px;
     text-transform: uppercase;
     overflow-wrap: break-word;
-}
-
-.project-description {
-    font-size: 14px;
-    line-height: 1.7;
-    color: #bdc3c7;
-    margin-bottom: 16px;
-    max-width: 480px;
 }
 
 .project-tags {
@@ -732,15 +730,6 @@ section {
     .logo { font-size: 9px; letter-spacing: 0.18em; }
     .nav-toggle { font-size: 10px; letter-spacing: 0.12em; }
     .container { padding: 0 16px; }
-    /* The overlay sits in a fixed-ratio card, so it cannot grow. At this width
-       the longest description runs to seven lines and would overflow; capping
-       it keeps the full-size title and image the design is built around. */
-    .project-description {
-        display: -webkit-box;
-        -webkit-line-clamp: 4;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-    }
     .hero-meta { grid-template-columns: 1fr; gap: 32px; }
     .stack-item { grid-template-columns: 1fr 1fr; }
     .stack-index { display: none; }

@@ -26,7 +26,6 @@ export const work = {
     projects: [
         {
             title: "LUXESTYLE_BRAIDS",
-            description: "Live production site for a premium braiding and hairstyling studio. Service catalogue, gallery and booking flow, typed end to end with Prisma holding the data layer.",
             image: "/images/luxestylebraids.jpg",
             tags: ["React", "Prisma", "TypeScript"],
             liveLink: "https://luxestylebraids.com",
@@ -34,7 +33,6 @@ export const work = {
         },
         {
             title: "LUMI_COSMETICS",
-            description: "Editorial storefront for a luxury cosmetics house built for melanin-rich skin. Ships Skin Scan 360, an AI shade-match pass that reads a customer's tone and returns the products that suit it.",
             image: "/images/lumicosmetics.jpg",
             tags: ["React", "TypeScript", "Vite", "Tailwind"],
             liveLink: null,
@@ -42,7 +40,6 @@ export const work = {
         },
         {
             title: "EXAM_PLANNER",
-            description: "Scheduling system for students carrying a full exam load. Calendar-driven planning on a React client, with an Express service tracking every sitting through to results day.",
             image: "/images/homepage.jpg",
             tags: ["React", "Express", "Node.js"],
             liveLink: "https://ur-exam-planner.vercel.app/",
@@ -50,7 +47,6 @@ export const work = {
         },
         {
             title: "EVAL_LENS",
-            description: "Self-hosted control room for LLM and RAG output quality. LLM-as-judge scoring with cost and latency capture, full run history, and model providers swappable without touching the pipeline.",
             image: "/images/evallens.png",
             tags: ["Python", "FastAPI", "SQLModel", "OpenAI SDK"],
             liveLink: null,

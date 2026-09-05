@@ -10,9 +10,6 @@ export default function Work() {
                         <img src={project.image} alt={project.title} loading="lazy" />
                         <div className="project-info">
                             <h2>{project.title}</h2>
-                            {project.description && (
-                                <p className="project-description">{project.description}</p>
-                            )}
                             <div className="project-tags">
                                 {project.tags.map((tag) => (
                                     <span className="tag" key={tag}>{tag}</span>
