@@ -328,6 +328,14 @@ section {
     overflow-wrap: break-word;
 }
 
+.project-description {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #bdc3c7;
+    margin-bottom: 16px;
+    max-width: 480px;
+}
+
 .project-tags {
     display: flex;
     gap: 8px;
@@ -730,6 +738,15 @@ section {
     .logo { font-size: 9px; letter-spacing: 0.18em; }
     .nav-toggle { font-size: 10px; letter-spacing: 0.12em; }
     .container { padding: 0 16px; }
+    /* The overlay sits in a fixed-ratio card, so it cannot grow. At this width
+       the longest description runs to seven lines and would overflow; capping
+       it keeps the full-size title and image the design is built around. */
+    .project-description {
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
     .hero-meta { grid-template-columns: 1fr; gap: 32px; }
     .stack-item { grid-template-columns: 1fr 1fr; }
     .stack-index { display: none; }
