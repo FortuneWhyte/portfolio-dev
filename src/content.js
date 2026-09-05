@@ -33,7 +33,7 @@ export const work = {
             githubLink: "https://github.com/FortuneWhyte"
         },
         {
-            title: "LUMI_COSMETICS",
+            title: "LuMicosmetics",
             description: "An editorial marketing site for LuMi, a luxury cosmetics brand built for melanin-rich skin, featuring Skin Scan 360 for AI shade-matching.",
             image: "/images/lumicosmetics.jpg",
             tags: ["React", "TypeScript", "Vite", "Tailwind"],
